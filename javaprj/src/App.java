@@ -15,10 +15,13 @@ public class App {
 
         //iterator는 무엇일까
         Iterator<Integer> it = set.iterator();
-        while(it.hasNext()){
-            System.out.println(it.next());
+        // while(it.hasNext()){
+        //     System.out.println(it.next());
 
-        }
+        // }
+        set.forEach((v)->{
+            System.out.println(v);
+        });
 
     }
 }
