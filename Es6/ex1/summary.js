@@ -275,7 +275,7 @@
 //         let result = exam[examSymbol.total]();
 //         console.log(result);
 
-       
+    
 //     }
 
 // }
@@ -433,7 +433,7 @@ console.log(result2);
 
 }
 {
-    //promise 콜백 중첩을 줄여주기 위한 도구
+    console.log("promise 콜백 중첩을 줄여주기 위한 도구");
 
     //이 함수는 우리가 만든 함수가 아니라고 가정하자
 //     function download(url,callback){

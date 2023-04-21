@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="dom.js" defer="defer"></script>
+</head>
+<body>
+    hello
+    <section id="s1" class="section1 tool">
+        <h1 class="aaa">문서</h1>
+
+        <div><button class="btn-up">위</button><button class="btn-down">아래</button></div>
+        <ul>
+            <li class="current">a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>d</li>
+            <li>e</li>
+        </ul>
+      </section>
+      <section class="s2">
+        <h1>이미지목록</h1>
+        <style>
+@keyframes zoomIn {
+  from {
+    transform: scale(1,1);
+  }
+  30%{
+    transform: rotate(360deg);
+  }
+
+  60%{
+    transform: rotate(-360deg);
+  }
+
+  to {
+    transform: scale(1.2,1.2);
+  }
+}
+
+            .s2 ul{
+                padding: 0;
+                list-style-type: none;
+                display:flex;
+            }
+            .s2 span{
+                display: inline-flex;
+                border: 5px solid red;
+                border-radius: 20px;
+                width:100px;
+                height: 100px;
+                align-items:center;
+                justify-content: center;
+                color: wheat;
+                font-weight: bold;
+                font-size: 50px;
+                background-color: blue;
+            }
+            .s2 li.current .box,
+            .s2 li.current span
+            {
+                
+                background-color:grey;
+                /* transition:  0.5s; */
+                animation: zoomIn 0.3s infinite alternate;
+            }
+        </style>
+        <ul>
+            <li>
+                <span>1</span>
+            </li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+        </ul>
+    </section>
+    <hr>
+</body>
+</html>
