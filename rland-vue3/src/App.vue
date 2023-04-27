@@ -34,9 +34,12 @@ export default {
 <script setup>
 //컴포지션을 지원하는 setup
 import Header from './components/Header.vue';
-import { onMounted, ref, reactive, computed } from 'vue';
+import NewList from './components/NewMenus.vue';
+import { onMounted, ref, reactive, computed, watch, shallowReactive, shallowRef, triggerRef } from 'vue';
 let b = 30;
 let c = ref(30);
+//얉은 ref
+let f = shallowReactive(123444);
 
 //시시각각 가격 바꾸기
 let menu = ref({
@@ -85,7 +88,8 @@ const clockHandler2 = ()=>{
             //이유2. let list =reative([])를 이용하면 list =json.list;일때 리액티브가 없어져버린다! 그래서 위와 같은 방식
             //을 사용해서 리액티브를 지키면서 안에 속성은 바뀔 수 있게 한거다
             console.log(model.list);
-
+            model.newlist = model.list;
+          console.log("엘레레"+model.list);
 
              //promise!
         //      fetch("http://192.168.0.33:8080/menus")
@@ -96,8 +100,10 @@ const clockHandler2 = ()=>{
         // });
         }    
 // 연습용let total =computed(()=>c.value+3);
-let total = computed(()=>model.list.map((m)=>m.price).reduce(p,c=>p+c,0));
-        
+
+
+//let total = computed(()=>model.list.map((m)=>m.price).reduce(p,c=>p+c,0));
+let total = computed(()=>model.list.map((m)=>m.price).reduce((p,c)=>p+c,0));
 
 const clickHandler = ()=>{
             console.log("클릭 헤헼");
@@ -112,24 +118,44 @@ const clickHandler = ()=>{
         //     return result;
         // });
         
+        function menuDelHandler(id){
+          console.log(id);
+          let idx =model.list.findIndex(m=>m.id==id);
+          model.list.splice(idx,1);
+        }
+        let query= ref("");
+        watch(query ,()=>{
+        model.list = model.list.filter( m => m.name.includes(query.value));
+          console.log(model.list); //레퍼런스 객체라서 value를 박아줘야한다
+        })
 
+        let aa= shallowRef({name:"okay"}); //shallow 
+        aa.value.name ="good"; //리액티브는 적용되고나서 다시 적용되는게 리액티브인데 이는 그냥 액티브이가.
+        function inputHandler(){
+          console.log("변경띠");
+          triggerRef(aa);
+        }
 
 </script>
 
 <template>
   <Header />
+  <div>
+      <label>검색어</label>
+      <input type="text" v-model="query">
+  </div>
   
   hello {{ a }} {{ b }} {{ c }}
   <div>
         <ul>
             <li v-for=" m in model.list">
-                <span >{{ m.name }}</span>
-
+                <span>{{ m.name }} <button type="button" @click="$event =>menuDelHandler(m.id)" val="del">del</button></span>
             </li>
         </ul>
       </div>
       <!-- Option API사용 -->
       <div>{{total}}</div>
+      <div>{{aa.name}}<input type="text" v-model="aa.name" @input="inputHandler"></div>
   <div>
     a:<span v-text="a"></span><input v-model.number="a" />
     <!--  -->
@@ -142,9 +168,13 @@ const clickHandler = ()=>{
   -->
     <!-- 컴포지션에 ref를 넣어보자!-->
     c:<span v-text="c"></span><input v-model.number="c" />
+    f:<span v-text="f"></span><input v-model.number="f" />
     <!--메뉴를 이용해서 가격을 계속 바꿔보자!-->
     menu.price:<span v-text="menu.price"></span><input v-model="menu.price" />
-    <button @click="clickHandler"></button>
+    <button @click="clickHandler">del</button>
   </div>
+  <NewList :data="model.newlist"/>
+
+  <!-- 데이터를 바인딩하면서 넣어주는 법 -->
 </template>
 <style></style>

@@ -1,4 +1,4 @@
 
 <template>
-    asdfasdfasdf
-    </template>
+ <div>asdfasdf</div>
+</template>
