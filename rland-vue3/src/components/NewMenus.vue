@@ -1,29 +1,25 @@
 <script setup>
-
-// export default{ 과거의 방식
+// export default{
 //     props:['data']
-
 // }
-    let props= defineProps({
-        list:[]
-
+    let props = defineProps({
+        list:[],
+        title:""
     });
 </script>
+
 <template>
-    
     <section>
-        <h1></h1>
+        <h1>{{props.title}}</h1>
         <ul>
-            <li v-for="m in props.list">{{m.name}}</li>
+            <li v-for="m in props.list">{{ m.name }}</li>
         </ul>
-
     </section>
-
 </template>
 
 <style scoped>
-section{
-    border: 10px solid gray;
-    padding: 20px;
-}
+    section{
+        border: 1px solid gray;
+        padding: 20px;
+    }
 </style>

@@ -35,11 +35,13 @@ export default {
 //컴포지션을 지원하는 setup
 import Header from './components/Header.vue';
 import NewList from './components/NewMenus.vue';
+import Modal from './components/Mocal.vue';
 import { onMounted, ref, reactive, computed, watch, shallowReactive, shallowRef, triggerRef } from 'vue';
 let b = 30;
 let c = ref(30);
 //얉은 ref
 let f = shallowReactive(123444);
+let title = "";
 
 //시시각각 가격 바꾸기
 let menu = ref({
@@ -50,8 +52,8 @@ let menu = ref({
 
 //이 안에 있는 애들만 바뀌게 하면 twoway방식을 사용할 수 있다.
 let model = reactive({
-  newlist:[],
-  list:[]
+  newlist: [],
+  list: []
 });
 //-----------------------------
 //컴포넌트를 만들때 라이플 사이클을 이런방식으로 할 수 있다!
@@ -66,7 +68,7 @@ onMounted(() => {
 // function cilckHandler(){
 //   console.log("딸깍");
 // }
-const clockHandler2 = ()=>{
+const clockHandler2 = () => {
   console.log(`람다식!-> 코드에서 연산식을 사용할때 다른 곳에서 식을 사용할때 사용
   수식을 전달할떄+ 다른 함수에게 인자로 전달할 때!
   특히 빅데이터 인공지능사용할때 자주 볼 수 있다!
@@ -74,88 +76,98 @@ const clockHandler2 = ()=>{
   같이 상호작용할 이유가 없는데 람다식을 사용해야하나..?
   `);
 }
-        // 이벤트 핸들러------------------------
-        // function clickHandler2(){
-        //     console.log("클릭 헤헼")
-        // }
-        async function load(){
+// 이벤트 핸들러------------------------
+// function clickHandler2(){
+//     console.log("클릭 헤헼")
+// }
+async function load() {
 
-          //await방식!
-            let response= await fetch ("http://192.168.0.33:8080/menus");
-            let json = await response.json();
-            model.list = json.list; //이렇게 담으면 안된다!
-            //이유1. 배열로 만든 list를 그냥 만들면 twoway방식이 안된다!
-            //이유2. let list =reative([])를 이용하면 list =json.list;일때 리액티브가 없어져버린다! 그래서 위와 같은 방식
-            //을 사용해서 리액티브를 지키면서 안에 속성은 바뀔 수 있게 한거다
-            console.log(model.list);
-            model.newlist = model.list;
-          console.log("엘레레"+model.list);
+  //await방식!
+  let response = await fetch("http://192.168.0.33:8080/menus");
+  let json = await response.json();
+  model.list = json.list; //이렇게 담으면 안된다!
+  //이유1. 배열로 만든 list를 그냥 만들면 twoway방식이 안된다!
+  //이유2. let list =reative([])를 이용하면 list =json.list;일때 리액티브가 없어져버린다! 그래서 위와 같은 방식
+  //을 사용해서 리액티브를 지키면서 안에 속성은 바뀔 수 있게 한거다
+  console.log(model.list);
+  model.newlist = model.list;
+  console.log("엘레레" + model.list);
 
-             //promise!
-        //      fetch("http://192.168.0.33:8080/menus")
-        //      .then(res=>res.json())
-        //      .then(json=>json.list)
-        //      .then(a=>{
-        //         list = a;
-        // });
-        }    
+  //promise!
+  //      fetch("http://192.168.0.33:8080/menus")
+  //      .then(res=>res.json())
+  //      .then(json=>json.list)
+  //      .then(a=>{
+  //         list = a;
+  // });
+}
 // 연습용let total =computed(()=>c.value+3);
 
 
 //let total = computed(()=>model.list.map((m)=>m.price).reduce(p,c=>p+c,0));
-let total = computed(()=>model.list.map((m)=>m.price).reduce((p,c)=>p+c,0));
+let total = computed(() => model.list.map((m) => m.price).reduce((p, c) => p + c, 0));
 
-const clickHandler = ()=>{
-            console.log("클릭 헤헼");
-            load();
+const clickHandler = () => {
+  console.log("클릭 헤헼");
+  load();
 
-            
-        }
-        // let total = computed(()=>{
-        //   let result =0;
-        //   for(let m of model.list)
-        //     result+= m.price;
-        //     return result;
-        // });
-        
-        function menuDelHandler(id){
-          console.log(id);
-          let idx =model.list.findIndex(m=>m.id==id);
-          model.list.splice(idx,1);
-        }
-        let query= ref("");
-        watch(query ,()=>{
-        model.list = model.list.filter( m => m.name.includes(query.value));
-          console.log(model.list); //레퍼런스 객체라서 value를 박아줘야한다
-        })
 
-        let aa= shallowRef({name:"okay"}); //shallow 
-        aa.value.name ="good"; //리액티브는 적용되고나서 다시 적용되는게 리액티브인데 이는 그냥 액티브이가.
-        function inputHandler(){
-          console.log("변경띠");
-          triggerRef(aa);
-        }
+}
+// let total = computed(()=>{
+//   let result =0;
+//   for(let m of model.list)
+//     result+= m.price;
+//     return result;
+// });
+
+function menuDelHandler(id) {
+  console.log(id);
+  let idx = model.list.findIndex(m => m.id == id);
+  model.list.splice(idx, 1);
+}
+let query = ref("");
+watch(query, () => {
+  model.list = model.list.filter(m => m.name.includes(query.value));
+  console.log(model.list); //레퍼런스 객체라서 value를 박아줘야한다
+})
+
+let aa = shallowRef({ name: "okay" }); //shallow 
+aa.value.name = "good"; //리액티브는 적용되고나서 다시 적용되는게 리액티브인데 이는 그냥 액티브이가.
+function inputHandler() {
+  console.log("변경띠");
+  triggerRef(aa);
+}
+let showModal = ref(false);
+function showHandler() {
+  showModal.value = true;
+  console.log(showModal.value);
+}
+function dlgHandler(a) {
+  console.log("어떻게 한거지")
+  showModal.value = false;
+  console.log(a)
+}
 
 </script>
 
 <template>
   <Header />
   <div>
-      <label>검색어</label>
-      <input type="text" v-model="query">
+    <label>검색어</label>
+    <input type="text" v-model="query">
   </div>
-  
+
   hello {{ a }} {{ b }} {{ c }}
   <div>
-        <ul>
-            <li v-for=" m in model.list">
-                <span>{{ m.name }} <button type="button" @click="$event =>menuDelHandler(m.id)" val="del">del</button></span>
-            </li>
-        </ul>
-      </div>
-      <!-- Option API사용 -->
-      <div>{{total}}</div>
-      <div>{{aa.name}}<input type="text" v-model="aa.name" @input="inputHandler"></div>
+    <ul>
+      <li v-for=" m in model.list">
+        <span>{{ m.name }} <button type="button" @click="$event => menuDelHandler(m.id)" val="del">del</button></span>
+      </li>
+    </ul>
+  </div>
+  <!-- Option API사용 -->
+  <div>{{ total }}</div>
+  <div>{{ aa.name }}<input type="text" v-model="aa.name" @input="inputHandler"></div>
   <div>
     a:<span v-text="a"></span><input v-model.number="a" />
     <!--  -->
@@ -170,11 +182,17 @@ const clickHandler = ()=>{
     c:<span v-text="c"></span><input v-model.number="c" />
     f:<span v-text="f"></span><input v-model.number="f" />
     <!--메뉴를 이용해서 가격을 계속 바꿔보자!-->
-    menu.price:<span v-text="menu.price"></span><input v-model="menu.price" />
+    price:<span v-text="menu.price"></span><input v-model="menu.price" />
     <button @click="clickHandler">del</button>
   </div>
-  <NewList :data="model.newlist"/>
-
+  <NewList :list="model.newlist" :title="aa.name" />
+  <button @click="showHandler">show</button>
+  <Modal title="공지사항" :show="showModal" @ok="dlgHandler">
+    <div>
+      안녕하세요<br>
+      asdfasdfasdf
+    </div>
+  </Modal>
   <!-- 데이터를 바인딩하면서 넣어주는 법 -->
 </template>
 <style></style>
