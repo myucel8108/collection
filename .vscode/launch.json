@@ -9,6 +9,16 @@
             "projectName": "web",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-RlandApiBoot3Application<rland-api-boot3>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "kr.co.rland.rlandapiboot3.RlandApiBoot3Application",
+            "projectName": "rland-api-boot3",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

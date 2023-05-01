@@ -1,4 +1,3 @@
-
 <template>
- <div>asdfasdf</div>
+    나는 발이야
 </template>
