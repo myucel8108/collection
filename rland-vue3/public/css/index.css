@@ -1,0 +1,482 @@
+ body {
+  /*background-color: #181614;*/
+  overflow-x: hidden;
+} 
+
+/* 상단 환영인사&이미지 */
+.greeting {
+  background-image: url(../../image/main-top.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.greeting-inner {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.83) 100%
+  );
+  width: 100%;
+  height: 800px;
+  position: relative;
+}
+
+.greeting-inner > div:nth-child(1) {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-text-4);
+  width: 60%;
+
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  gap: 10px;
+}
+
+.greeting-inner > div:nth-child(1) > h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.greeting-inner > div:nth-child(1) > div,
+.greeting-inner > div:nth-child(2),
+.greeting-inner > div:nth-child(3) {
+  display: none;
+}
+
+/* rland를 추천합니다 */
+.recommend-rland {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+
+  background-color: #251404;
+  box-sizing: border-box;
+  padding: 60px 0;
+}
+
+.recommend-rland > h1 {
+  display: none;
+}
+
+.recommend-rland-fruit,
+.recommend-rland-cookie,
+.recommend-rland-roasting {
+  width: 300px;
+  height: fit-content;
+  color: var(--color-text-4);
+  z-index: 1;
+}
+
+.recommend-rland-fruit {
+  align-self: flex-start;
+  margin-left: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.recommend-rland-cookie {
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+
+  box-sizing: border-box;
+  padding: 0 24px;
+}
+
+.recommend-rland-roasting {
+  align-self: flex-end;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+  gap: 24px;
+
+  margin-right: 30px;
+}
+
+.recommend-rland-fruit > h1 {
+  font-weight: bold;
+  font-size: 24px;
+  order: 1;
+}
+.recommend-rland-cookie > h1 {
+  font-weight: bold;
+  font-size: 24px;
+  order: 1;
+}
+.recommend-rland-roasting > h1 {
+  font-weight: bold;
+  font-size: 24px;
+  order: 1;
+}
+
+.recommend-rland-fruit > h1 > strong {
+  font-weight: inherit;
+  font-size: inherit;
+  color: #d86159;
+}
+.recommend-rland-cookie > h1 > strong {
+  font-weight: inherit;
+  font-size: inherit;
+  color: #d48950;
+}
+.recommend-rland-roasting > h1 > strong {
+  font-weight: inherit;
+  font-size: inherit;
+  color: #944814;
+}
+
+.recommend-rland-fruit > p {
+  font-size: var(--font-size-normal-mobile);
+  line-height: 22px;
+  order: 2;
+}
+.recommend-rland-cookie > p {
+  font-size: var(--font-size-normal-mobile);
+  line-height: 22px;
+  order: 3;
+}
+.recommend-rland-roasting > p {
+  font-size: var(--font-size-normal-mobile);
+  line-height: 22px;
+  order: 2;
+}
+
+.recommend-rland-fruit > div {
+  order: 3;
+}
+.recommend-rland-cookie > div {
+  order: 2;
+}
+.recommend-rland-roasting > div {
+  order: 3;
+}
+
+.recommend-rland-fruit > div > img,
+.recommend-rland-cookie > div > img,
+.recommend-rland-roasting > div > img {
+  width: 252px;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* 명소 찾기 */
+.tourist-spot {
+  background-image: url(../../image/main-tourist.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  width: 100%;
+  height: 420px;
+  position: relative;
+  color: var(--color-text-4);
+}
+
+.tourist-spot > h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.recommend-coffe-spot {
+  color: var(--color-text-4);
+  width: 268px;
+  height: 130px;
+
+  display: flex;
+  place-items: center;
+
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0 auto;
+  font-size: var(--font-size-normal-mobile);
+}
+
+/* 메인페이지 가운데 빗금 문양 */
+.slash-background > div:nth-child(1) {
+  position: absolute;
+  width: 50px;
+  height: 1800px;
+  top: 290px;
+
+  background: #5e2808;
+  transform: rotate(122.38deg);
+}
+
+.slash-background > div:nth-child(2) {
+  position: absolute;
+  width: 180px;
+  height: 1800px;
+  top: 500px;
+
+  background: #5e2808;
+  transform: rotate(122.38deg);
+}
+
+.slash-background > div:nth-child(3) {
+  position: absolute;
+  width: 50px;
+  height: 1800px;
+  top: 630px;
+
+  background: #5e2808;
+  transform: rotate(122.38deg);
+}
+
+@media (min-width: 768px) {
+  /* 상단 환영인사&이미지 */
+  .greeting {
+    background-image: none;
+    background-size: auto;
+    margin: 120px 0;
+    box-sizing: border-box;
+  }
+
+  .greeting-inner {
+    background: none;
+    width: 1200px;
+    height: auto;
+    position: relative;
+    border: 1px solid white;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 40px;
+    gap: 40px;
+  }
+
+  .greeting-inner > div:nth-child(1) {
+    position: static;
+    transform: none;
+    color: var(--color-text-4);
+
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 30px;
+    border: 1px solid white;
+    height: 625px;
+    justify-content: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  .greeting-inner > div:nth-child(1) > h1 {
+    font-size: 28px;
+    font-weight: 600;
+    order: 2;
+  }
+
+  .greeting-inner > div:nth-child(1) > h2 {
+    order: 1;
+  }
+
+  .greeting-inner > div:nth-child(1) > div {
+    order: 3;
+    margin-right: 40%;
+  }
+
+  .greeting-inner > div:nth-child(1) > div,
+  .greeting-inner > div:nth-child(2),
+  .greeting-inner > div:nth-child(3) {
+    display: block;
+  }
+
+  .greeting-inner > div:nth-child(2) {
+    border: 1px solid white;
+    height: 625px;
+  }
+
+  .greeting-inner > div:nth-child(2) > img {
+    object-fit: cover;
+    height: 100%;
+
+    mask-image: linear-gradient(rgba(0, 0, 0, 0.83) 0%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(
+      rgba(0, 0, 0, 0.83) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .greeting-inner > div:nth-child(3) {
+    border: 1px solid white;
+    height: 625px;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .greeting-inner > div:nth-child(3) > div:first-child {
+    font-weight: bold;
+    font-size: 56px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    color: var(--color-fg-3);
+    height: inherit;
+    writing-mode: vertical-rl;
+    justify-content: center;
+  }
+
+  .greeting-inner > div:nth-child(3) > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    box-sizing: border-box;
+    border-top: 1px solid white;
+  }
+
+  /* rland를 추천합니다 */
+  .recommend-rland {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+
+    box-sizing: border-box;
+    gap: 30px;
+    row-gap: 90px;
+    padding: 135px 120px;
+  }
+
+  .recommend-rland > h1 {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-text-4);
+    grid-column: 1/4;
+    justify-self: center;
+  }
+
+  .recommend-rland-fruit,
+  .recommend-rland-cookie,
+  .recommend-rland-roasting {
+    width: 370px;
+    height: 588px;
+    color: var(--color-text-7);
+    z-index: 1;
+    background-color: #f2f3f4;
+    box-sizing: border-box;
+    place-self: center;
+  }
+
+  .recommend-rland-fruit {
+    align-self: auto;
+    margin-left: 0;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .recommend-rland-cookie {
+    align-self: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .recommend-rland-roasting {
+    align-self: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+
+    margin-right: 0;
+  }
+
+  .recommend-rland-fruit > h1,
+  .recommend-rland-cookie > h1,
+  .recommend-rland-roasting > h1 {
+    font-weight: bold;
+    font-size: 24px;
+    padding: 40px 40px 0;
+    box-sizing: border-box;
+    order: 2;
+  }
+
+  .recommend-rland-fruit > p,
+  .recommend-rland-cookie > p,
+  .recommend-rland-roasting > p {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0 60px 40px;
+    box-sizing: border-box;
+    order: 3;
+  }
+
+  .recommend-rland-fruit > div,
+  .recommend-rland-cookie > div,
+  .recommend-rland-roasting > div {
+    order: 1;
+    width: 100%;
+    height: 305px;
+  }
+
+  .recommend-rland-fruit > div > img,
+  .recommend-rland-cookie > div > img,
+  .recommend-rland-roasting > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 명소 찾기 */
+  .tourist-spot {
+    width: 100%;
+    height: 774px;
+  }
+
+  .tourist-spot > h1 {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .recommend-coffe-spot {
+    font-size: 16px;
+  }
+
+  /* 메인페이지 가운데 빗금 문양 */
+  .slash-background {
+    display: none;
+  }
+}

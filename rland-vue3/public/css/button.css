@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+.btn {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-text-invert);
+  /* font-size: var(--font-size-normal); */
+
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+a.btn-default,
+a.btn-strong,
+input[type=submit].btn-default {
+  color: var(--color-text-invert);
+}
+
+a.btn-ghost {
+  color: var(--color-fg-3);
+}
+/* a.btn-text {
+  color: var(--color-text-6);
+} */
+
+.btn-default {
+  background-color: var(--color-fg-3);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02), 0px 1px 4px rgba(0, 0, 0, 0.16);
+  border: 1px solid var(--color-fg-3);
+}
+
+.btn-text,
+a.btn-text,
+a.btn-text:link,
+a.btn-text:visited {
+  background-color: var(--color-fg-3-light);
+  color: var(--color-text-7);
+}
+
+.btn-shadow,
+a.btn-shadow:link,
+a.btn-shadow:visited,
+.btn-ghost {
+  /* background-color: var(--color-text-invert); */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  color: var(--color-text-7);
+}
+
+.btn-ghost {
+  border: 1px solid var(--color-fg-3);
+  color: var(--color-fg-3);
+}
+
+a.btn-ghost:hover {
+  background-color: var(--color-fg-3);
+  color: var(--color-text-invert);
+}
+
+.btn-strong {
+  background-color: var(--color-fg-strong);
+  color: var(--color-text-invert);
+
+  border: 1px solid var(--color-fg-strong);
+}
+
+.btn-brown-outline {
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px;
+  gap: 8px;
+
+  border: 1px solid #5e2808;
+}
+
+.btn-outline {
+  color: var(--color-text-7);
+  border: 1px solid var(--color-text-6);
+}
+
+input[type=submit].btn-default {
+
+  width: 100%;
+
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+  BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+  "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+
+  background-color: var(--color-fg-3);
+}
+/* -----------------------------------------------------bottom button */
+
+.btn-bottom {
+  display: flex;
+  align-items: center;
+
+  width: 100vw;
+  height: 50px;
+  min-width: 300px;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  /* z-index: 9; */
+}
+
+.btn-bottom > div {
+  width: 50%;
+  height: 100%;
+
+  background-color: var(--color-fg-3);
+  opacity: 0.8;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+}
+
+.btn-bottom > div:nth-child(1) {
+  position: relative;
+}
+
+.btn-bottom > div:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  height: 20px;
+  border-right: 1px solid #fff;
+}
+
+.btn-bottom > div input,
+.btn-bottom > div a {
+  width: 100%;
+  height: 100%;
+
+  color: var(--color-text-invert);
+}
+
+.btn-bottom > div input {
+  /* 폰트크기 왜 다른지 */
+  font-size: 14.2px;
+}
+
+.btn-bottom > div:hover {
+  opacity: 1;
+}
+
+/* button lined */

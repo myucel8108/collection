@@ -1,0 +1,459 @@
+@charset "UTF-8";
+
+
+
+/* === anonymous/menu/detail ============================= */
+
+.header-container {
+  display: none;
+}
+
+.menu-detail {
+  min-width: 300px;
+}
+
+  /* ------------------------------header */
+.menu-detail-header {
+  width: 100%;
+  height: 250px;
+}
+
+.menu-detail-header > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*IE 에서 지원하지 않음*/
+}
+
+
+
+.menu-detail-header > a {
+  position: fixed;
+  top: 40px;
+  left: 30px;
+}
+
+/* ------------------------------main-section */
+
+.icon-arrow-left-line:hover{
+  /* 동그란 배경이 있어야 하는 경우 -> .icon-circle */
+  background-color: rgba(0, 0, 0, 0.22);
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.menu-detail-main-section {
+  /* text-align: center; */
+  margin: 40px;
+}
+
+.menu-detail-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-detail-text > div:nth-child(1) {
+  text-align: center;
+}
+
+.menu-detail-text > div:nth-child(3) {
+  display: none;
+}
+
+.menu-detail-text > p {
+  margin-top: 14px;
+}
+
+.menu-detail-option-section {
+  margin: 40px auto;
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: 26rem;
+
+  
+
+  /* align-items: center; */
+}
+
+
+.menu-detail-option-section input,
+.menu-detail-option-section label {
+  width: 49%;
+  text-align: center;
+}
+
+.menu-detail-option-section > div:nth-child(3) {
+  margin-top: 40px;
+}
+
+.menu-detail-option-section .brown,
+.menu-detail-option-section .blue {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-detail-option-section .brown input[type=radio]:checked+label {
+  background-color: var(--color-fg-3);
+  color: var(--color-text-invert);
+
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02), 0px 1px 4px rgba(0, 0, 0, 0.16);
+  border: 1px solid var(--color-fg-3);
+
+    /* effect */
+    transition: background-color 0.2s;
+}
+
+.menu-detail-option-section .blue input[type=radio]:checked+label {
+  background-color: var(--color-fg-strong);
+  color: var(--color-text-invert);
+
+  border: 1px solid var(--color-fg-strong);
+
+      /* effect */
+      transition: background-color 0.2s;
+}
+
+.menu-detail-option-section-div>div:nth-child(2) {
+  margin-top: 10.72px;
+}
+
+/* -----------------------------------------------------담기 주문하기*/
+.menu-detail-order-section {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background-color: var(--color-bg-2);
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 4px 0px 6px 2px rgba(174, 174, 174, 0.25);
+
+}
+
+.menu-detail-order-section > h1 {
+  display: none;
+}
+
+  .menu-detail-order-section > div:nth-child(2) {
+    display: grid;
+    grid-template: repeat(2, 1fr) / 1fr 2fr 1fr;
+    place-items: center;
+  }
+    .menu-detail-order-section > div:nth-child(2)>span:first-child{
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+    }
+    .menu-detail-order-section > div:nth-child(2)>span:nth-child(2){
+      grid-row: 2 / 3;
+      grid-column: 1 / 4;
+    }
+
+    .menu-detail-order-section > div:nth-child(2) .icon-minus {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+
+      border: 1.5px solid var(--color-text-5);
+      border-radius: 1rem;
+    }
+
+    .menu-detail-order-section > div:nth-child(2) .icon-minus:hover {
+      border-color: var(--color-bg-3);
+      transition: all .5s;
+    }
+
+    .menu-detail-order-section > div:nth-child(2) .icon-minus::before {
+      background-color: var(--color-text-5);
+    }
+
+    .menu-detail-order-section > div:nth-child(2) .icon-minus:hover::before {
+      background-color: var(--color-bg-3);
+      transition: all .5s;
+    }
+
+    .menu-detail-order-section > div:nth-child(2) .icon-plus {
+      grid-row: 1 / 2;
+      grid-column: 3 / 4;
+
+      border: 1.5px solid var(--color-bg-3);
+      border-radius: 1rem;
+    }
+
+    .menu-detail-order-section > div:nth-child(2) .icon-plus::before {
+      background-color: var(--color-bg-3);
+    }
+
+    .menu-detail-order-section>div:nth-child(3) {
+      display: flex;
+      gap: 1rem;
+    }
+
+.menu-detail-order-section>div:nth-child(3) .btn{
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+
+/* -----------------------------------------------------recommend-menu-section */
+
+
+.menu-detail .recommend-menu-section {
+  display: none;
+
+}
+
+.temp-link-div .btn-shadow:hover{
+  background-color: var(--color-text-invert);
+
+  transition: background-color .5s;
+}
+
+/* ------------------------------btn-bottom */
+
+
+  /* === media query, anonymous/menu/detail ============================= */
+  @media (min-width: 768px) {
+
+    .header-container {
+      display: flex;
+    }
+
+    .menu-detail-main {
+      display: flex;
+      justify-content: center;
+
+      margin: 70px 0;
+
+    }
+
+    /* ------------------------------header */
+    .menu-detail {
+      max-width: 63rem;
+
+      display: grid;
+      grid-template: 1fr 350px / 1fr 2fr;
+
+      /* margin-top: 70px;
+      margin-left: auto;
+      margin-right: auto; */
+
+      row-gap: 50px;
+
+
+    }
+
+    .menu-detail-header {
+      width: 300px;
+      min-width: 300px;
+      height: 300px;
+      min-height: 300px;
+    }
+  
+    .menu-detail-header > a {
+      display: none;
+    }
+  
+    .menu-detail-main-section {
+      margin: 0;
+      margin-left: 50px;
+      min-width: 450px;
+      /* width: 40rem; 640px */
+    }
+    .menu-detail-text {
+      align-items: flex-start;
+    }
+
+    .menu-detail-option-section {
+        margin: 40px 0;
+    }
+    .menu-detail-text > div:nth-child(1) {
+      text-align: start;
+    }
+
+    .menu-detail-text > div:nth-child(3) {
+      display: inline-block;
+      margin-top: 14px;
+      order: 3;
+    }
+
+    .text-ctt {
+      word-break: keep-all;
+      text-align: start;
+    }
+
+    .temp-link-div {
+      display: flex;
+      flex-direction: column;
+        margin-top: 20px;
+        max-width: 436px;
+
+        order: 3;
+    }
+
+/* -----------------------------------------------------담기 주문하기*/
+.menu-detail-order-section {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  border-top: 2px solid #AFB1AC;
+  box-shadow: none;
+
+  margin-top: 80px;
+
+}
+
+.menu-detail-order-section > div:nth-child(2) {
+  position: absolute;
+  top: -60px;
+
+  border: 1.5px solid var(--color-text-5);
+}
+
+.menu-detail-order-section > div:nth-child(2)>span:first-child{
+  grid-row: 1 / 3;
+  /* grid-column: 2 / 3; */
+}
+
+    .menu-detail-order-section > div:nth-child(2)>span:nth-child(2){
+      display: none;
+    }
+
+    .menu-detail-order-section > div:nth-child(2) .icon-minus,
+    .menu-detail-order-section > div:nth-child(2) .icon-plus {
+      grid-row: 1 / 3;
+      border: none;
+    }
+
+    .menu-detail-order-section>div:nth-child(3){
+      width: 70%;
+    }
+
+
+
+
+    .menu-detail-order-section>div:nth-child(3) .btn{
+      border-radius: 0;
+      width: 50%;
+      /* padding: 0; */
+    }
+
+    /* ----------------관리자일 경우 보여지는 하단 버튼------bottom button */
+
+    .btn-bottom {
+      position: unset;
+      width: unset;
+      height: unset;
+
+      background-color: transparent;
+
+      margin-top: 40px;
+      padding-top: 40px;
+
+      
+      box-sizing: border-box;
+      border-top: 2px solid #AFB1AC;
+
+      /* opacity: 1; */
+
+    }
+
+    .btn-bottom > div {
+      height: 40px;
+
+      background-color: transparent;
+      color: var(--color-text-invert);
+    
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02), 0px 1px 4px rgba(0, 0, 0, 0.16);
+      border: 1px solid var(--color-fg-3);
+    max-width: 13rem; /*208px*/
+
+    opacity: 1;
+
+    }
+
+    .btn-bottom > div:hover {
+      background-color: var(--color-fg-3);
+      /* background-color: rgba(0, 0, 0, 0.02); */
+
+      /* opacity: 0.8; */
+
+              /* effect */
+              transition: all 0.2s;
+    }
+    .btn-bottom > div:nth-child(1):hover {
+      opacity: 0.8;
+    }
+    
+
+    .btn-bottom div input,
+    .btn-bottom div a{
+
+      font-weight: 600;
+      color: var(--color-fg-3);
+    }
+
+    .btn-bottom > div:hover > input,
+    .btn-bottom > div:hover > a {
+      color: var(--color-text-invert);
+    }
+
+
+
+    .btn-bottom div:nth-child(1) input {
+      background-color: var(--color-fg-3);
+      color: var(--color-text-invert);
+    }
+
+    .btn-bottom > div:nth-child(1)::before {
+      display: none;
+    }
+
+    .btn-bottom > div:nth-child(2){
+  margin-left: 1rem;
+}
+
+    /* -----------------------------------------------------recommend-menu-section */
+
+
+    .menu-detail .recommend-menu-section {
+      display: block;
+      grid-area: 2 / 1 / 3 / 3 ; /*row시작 col시작 row끝 col끝*/
+    }
+
+    .menu-detail .recommend-menu-section > h1 {
+      padding: 14px 0;
+
+      font-weight: 700;
+      font-size: 16px;
+
+      box-sizing: border-box;
+      border-bottom: 2px solid var(--color-fg-3);
+    }
+
+    .menu-detail .menu-section {
+      display: flex;
+
+    padding-top: 30px;
+    gap: 30px;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    overflow-x: auto;
+    }
+
+    .menu-detail .menu-section .menu {
+      flex-shrink: 0;
+    }
+    
+  }

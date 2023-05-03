@@ -1,0 +1,228 @@
+.menu-reg-section {
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--color-bg-2);
+  overflow-y: scroll;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+}
+
+.menu-reg-section > h1 {
+  display: none;
+}
+
+.menu-reg-form {
+  width: 85%;
+
+  margin: 40px 0;
+}
+
+.menu-reg-form > .menu-reg-img {
+  width: 100%;
+  height: 160px;
+}
+
+.menu-reg-form > .menu-reg-img > h1 {
+  display: none;
+}
+
+.menu-reg-form > .menu-reg-img > label {
+  width: 100%;
+  height: 100%;
+
+  display: inline-block;
+  box-sizing: border-box;
+  border: 2px dashed #ffffff;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-reg-form > .menu-reg-img input[type="file"] {
+  display: none;
+}
+
+/* .menu-reg-form > .menu-reg-img > label > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+/* --------------------------------------------------------------------입력폼 */
+.menu-reg-form > .menu-reg-input-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.menu-reg-form > .menu-reg-input-list > h1 {
+  display: none;
+}
+
+.menu-reg-input-list select {
+  /* 기본 select 스타일 제거 */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.5 8.25L12 15.75L4.5 8.25' stroke='%23575757' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+    no-repeat center;
+  background-color: white;
+  background-position: right 12px center;
+}
+
+.menu-reg-form > .menu-reg-input-list > select,
+.menu-reg-form > .menu-reg-input-list > input {
+  height: 50px;
+
+  padding: 12px;
+  box-sizing: border-box;
+  border: 0.5px solid #dbded8;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.menu-reg-form > .menu-reg-input-list > textarea {
+  height: 128px;
+
+  box-sizing: border-box;
+  padding: 16px 12px;
+  border: 0.5px solid #dbded8;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  resize: none;
+}
+
+.menu-reg-form > .menu-reg-input-checkbox {
+  margin-top: 22px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-reg-form > .menu-reg-input-checkbox > h1 {
+  font-weight: 600;
+  font-size: var(--font-size-normal-mobile);
+}
+
+.menu-reg-form > .menu-reg-input-checkbox > div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: #919191;
+}
+
+.menu-reg-form > .menu-reg-input-checkbox > .menu-reg-input-checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.menu-reg-form
+  > .menu-reg-input-checkbox
+  > .menu-reg-input-checkbox-list
+  > div {
+  height: 40px;
+  width: 140px;
+
+  position: relative;
+}
+
+.menu-reg-form
+  > .menu-reg-input-checkbox
+  > .menu-reg-input-checkbox-list
+  > div
+  > label {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  padding: 8px;
+  padding-left: 24px;
+  border: 2px solid #c5c7c2;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: var(--font-size-normal-mobile);
+  color: #c5c7c2;
+  cursor: pointer;
+}
+
+.menu-reg-form
+  > .menu-reg-input-checkbox
+  > .menu-reg-input-checkbox-list
+  > div
+  > input[type="checkbox"] {
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  /* transform: translate(-50%, -50%); */
+}
+
+.menu-reg-form
+  > .menu-reg-input-checkbox
+  > .menu-reg-input-checkbox-list
+  > div
+  > input:checked
+  + label {
+  border-color: var(--color-fg-3);
+  color: var(--color-text);
+  transition: color 1s, border-color 1s;
+}
+
+/* .menu-reg-form
+  > .menu-reg-input-checkbox
+  > .menu-reg-input-checkbox-list
+  > div
+  > input:checked
+  + .icon-check::before {
+  background-color: var(--color-fg-3);
+}
+.icon-check::before {
+  width: 24px;
+  height: 24px;
+} */
+
+.wd-200 {
+  width: 200px;
+}
+
+@media (min-width: 768px) {
+  .menu-reg-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.48);
+    z-index: 99;
+  }
+
+  .menu-reg-section {
+    width: 60%;
+    height: 80%;
+    max-width: 600px;
+    overflow: scroll;
+
+    background-color: var(--color-bg-2);
+
+    position: fixed;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

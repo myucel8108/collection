@@ -1,0 +1,38 @@
+.sign-up {
+  width: 240px;
+  margin: 140px auto 171px;
+}
+
+.sign-up-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.font-14 {
+  font-size: var(--font-size-normal-mobile);
+}
+
+.sign-up-form {
+  margin-top: 60px;
+}
+
+.sign-up-form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sign-up-form-input input {
+  width: 100%;
+}
+
+.sign-up-form-button {
+  margin-top: 90px;
+}
+
+@media (min-width: 768px) {
+  .sign-up {
+    width: 300px;
+    margin: 140px auto 171px;
+  }
+}

@@ -1,0 +1,48 @@
+.sign-in {
+  width: 240px;
+  margin: 140px auto 171px;
+}
+
+.sign-in-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.wd-100 {
+  width: 100%;
+}
+
+.font-14 {
+  font-size: var(--font-size-normal-mobile);
+}
+
+.sign-in-form-button {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.sign-in-form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 60px;
+}
+
+.sign-in-form-input input {
+  width: 100%;
+}
+
+.sign-in-find-user {
+  margin-top: 66px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sign-in {
+    width: 300px;
+    margin: 140px auto 171px;
+  }
+}

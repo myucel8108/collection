@@ -1,0 +1,180 @@
+.top-img-title {
+  width: 100%;
+  height: 16rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.327), rgba(0, 0, 0, 0.3)),
+    url(../../../image/menu-management.svg) no-repeat center/cover;
+}
+
+.tab-search-wrap {
+  margin: 0 30px;
+  margin-top: 1.3rem;
+}
+
+.tab-search-wrap .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.bl-2 {
+  border-left: 2px solid #c5c7c2;
+}
+
+.flex-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 24px auto 0;
+  gap: 24px;
+}
+
+.pl-12 {
+  padding-left: 12px;
+}
+
+.flex-column-gap-12 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.icon-plus-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* -----------------------------------------------------메뉴 섹션~~ */
+
+.menu-edit-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* -----------------------------------------------------추천메뉴 섹션~~ */
+
+.recommend-menu-section {
+  width: 100%;
+
+  box-sizing: border-box;
+  padding: 12px;
+  background-color: #e4e4e4;
+}
+
+.recommend-menu-section > div > h1 {
+  font-size: 14px;
+  font-weight: 700;
+}
+.menu-delete-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* ----------------------- 반응형 구간 ---------------------------- */
+
+@media (min-width: 768px) {
+  .bl-2 {
+    border-left: 0;
+  }
+
+  .pl-12 {
+    padding-left: 0;
+  }
+
+  .top-img-title {
+    background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+      url(../../../image/menu-management.svg) no-repeat center/cover;
+  }
+
+  .flex-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 667px;
+  }
+  /* -----------------------------------------------------메뉴 섹션~~ */
+  .menu-edit-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    row-gap: 60px;
+    margin: 40px 0;
+    box-sizing: border-box;
+  }
+
+  /* -----------------------------------------------------추천메뉴 섹션~~ */
+
+  .recommend-menu-section {
+    box-sizing: border-box;
+    padding: 16px 30px 20px;
+    background-color: #e4e4e4;
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.14);
+    grid-column: 1/4;
+    grid-row: 2/2;
+  }
+  .menu-delete-section {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 12px;
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flex-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 934px;
+  }
+
+  .menu-delete-section {
+    gap: 38px;
+  }
+  /* -----------------------------------------------------메뉴 섹션~~ */
+  .menu-edit-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .recommend-menu-section {
+    grid-column: 1/5;
+  }
+}
+@media (min-width: 1600px) {
+  .flex-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 1210px;
+  }
+  .menu-delete-section {
+    gap: 50px;
+  }
+  /* -----------------------------------------------------메뉴 섹션~~ */
+  .menu-edit-section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    row-gap: 60px;
+  }
+  .recommend-menu-section {
+    grid-column: 1/6;
+  }
+}

@@ -2,28 +2,30 @@ import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
 import Index from './components/Index.vue';
+import Layout from  './components/Layout.vue'
+import Login from './components/login.vue'
 
 // 2. Define some routes
 // Each route should map to a component.
 // We'll talk about nested routes later.
 const routes = [
-    { path: 'index', component: Index },
-
+    
     {
         path: '/', component: Layout, children: [
+            { path: 'index', component: Index },
             { path: 'login', component: Login },
         ]
     },
-    {
-        path: '/admin', component: AdminLayout, children: [
-            {
-                path: 'menus', component: MenuLayout, children: [
-                    { path: 'menus', component: MenuList },
-                    { path: 'detail', component: MenuDetail },
-                ]
-            },
-        ]
-    },
+    // {
+    //     path: '/admin', component: AdminLayout, children: [
+    //         {
+    //             path: 'menus', component: MenuLayout, children: [
+    //                 { path: 'menus', component: MenuList },
+    //                 { path: 'detail', component: MenuDetail },
+    //             ]
+    //         },
+    //     ]
+    // },
 
 ]
 

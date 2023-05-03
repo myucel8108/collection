@@ -1,0 +1,946 @@
+/* --------------------------------------기본 메뉴카드 */
+.menu-section > h1 {
+  display: none;
+}
+
+.menu-section > .menu {
+  height: 80px;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    "img name ." 1fr
+    "img engName ." 1fr
+    "img price ." 1fr/
+    80px 1fr 1fr;
+
+  column-gap: 16px;
+}
+
+.menu-section > .menu > div:first-child {
+  grid-area: img;
+}
+
+.menu-section > .menu > div:first-child > a {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-section > .menu > div:first-child > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-section > .menu > h1 {
+  grid-area: name;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-section > .menu > h2 {
+  grid-area: engName;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: var(--color-text-5);
+}
+
+.menu-section > .menu > div:nth-child(4) {
+  grid-area: price;
+
+  display: flex;
+  align-items: end;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+/* --------------------------------------주문확인서 메뉴카드 */
+.menu-ordered-section > h1 {
+  display: none;
+}
+
+.menu-ordered-section > .menu {
+  height: 80px;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    "img name ." 1fr
+    "img engName ." 1fr
+    "img price ." 1fr/
+    80px 1fr 1fr;
+
+  column-gap: 16px;
+}
+
+.menu-ordered-section > .menu > div:first-child {
+  grid-area: img;
+}
+
+.menu-ordered-section > .menu > div:first-child > a {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-ordered-section > .menu > div:first-child > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-ordered-section > .menu > h1 {
+  grid-area: name;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-ordered-section > .menu > h2 {
+  grid-area: engName;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: var(--color-text-5);
+}
+
+.menu-ordered-section > .menu > div:nth-child(4) {
+  grid-area: price;
+
+  display: flex;
+  align-items: end;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+/* --------------------------------------찜기능이 있는 메뉴카드 */
+.menu-wish-section > h1 {
+  display: none;
+}
+
+.menu-wish-section > .menu {
+  height: 80px;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    "img name wish" 1fr
+    "img engName ." 1fr
+    "img price ." 1fr/
+    80px 1fr 1fr;
+
+  column-gap: 16px;
+}
+
+.menu-wish-section > .menu > div:first-child {
+  grid-area: img;
+}
+
+.menu-wish-section > .menu > div:first-child > a {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-wish-section > .menu > div:first-child > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-wish-section > .menu > h1 {
+  grid-area: name;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-wish-section > .menu > h2 {
+  grid-area: engName;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: var(--color-text-5);
+}
+
+.menu-wish-section > .menu > div:nth-child(4) {
+  grid-area: price;
+
+  display: flex;
+  align-items: end;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-wish-section > .menu > div:nth-child(5) {
+  grid-area: wish;
+
+  display: flex;
+  justify-content: end;
+}
+
+/* --------------------------------------체크박스가 있는 메뉴카드 */
+.menu-check-section > h1 {
+  display: none;
+}
+
+.menu-check-section > .menu {
+  height: 80px;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    "img name check" 1fr
+    "img engName ." 1fr
+    "img price ." 1fr/
+    80px 1fr 1fr;
+
+  column-gap: 16px;
+}
+
+.menu-check-section > .menu > div:first-child {
+  grid-area: img;
+}
+
+.menu-check-section > .menu > div:first-child > a {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-check-section > .menu > div:first-child > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-check-section > .menu > h1 {
+  grid-area: name;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-check-section > .menu > h2 {
+  grid-area: engName;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: var(--color-text-5);
+}
+
+.menu-check-section > .menu > div:nth-child(4) {
+  grid-area: price;
+
+  display: flex;
+  align-items: end;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-check-section > .menu > div:nth-child(5) {
+  grid-area: check;
+
+  display: flex;
+  justify-content: end;
+}
+
+/* --------------------------------------삭제만 가능한 메뉴카드 */
+.menu-delete-section > h1 {
+  display: none;
+}
+
+.menu-delete-section > .menu {
+  height: 80px;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    "img name ." 1fr
+    "img engName ." 1fr
+    "img price trash" 1fr/
+    80px 1fr 1fr;
+
+  column-gap: 16px;
+}
+
+.menu-delete-section > .menu > div:first-child {
+  grid-area: img;
+}
+
+.menu-delete-section > .menu > div:first-child > a {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-delete-section > .menu > div:first-child > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-delete-section > .menu > h1 {
+  grid-area: name;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-delete-section > .menu > h2 {
+  grid-area: engName;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: var(--color-text-5);
+}
+
+.menu-delete-section > .menu > div:nth-child(4) {
+  grid-area: price;
+
+  display: flex;
+  align-items: end;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-delete-section > .menu > div:nth-child(5) {
+  grid-area: trash;
+
+  display: flex;
+  justify-content: end;
+}
+
+/* --------------------------------------편집 가능한 메뉴카드 */
+.menu-edit-section > h1 {
+  display: none;
+}
+
+.menu-edit-section > .menu {
+  height: 80px;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    "img name arrow" 1fr
+    "img engName ." 1fr
+    "img price pencilTrash" 1fr/
+    80px 1fr 1fr;
+
+  column-gap: 16px;
+  position: relative;
+}
+
+.menu-edit-section > .menu > div:first-child {
+  grid-area: img;
+}
+
+.menu-edit-section > .menu > div:first-child > a {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-edit-section > .menu > div:first-child > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-edit-section > .menu > h1 {
+  grid-area: name;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-edit-section > .menu > h2 {
+  grid-area: engName;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: var(--color-text-5);
+}
+
+.menu-edit-section > .menu > div:nth-child(4) {
+  grid-area: price;
+
+  display: flex;
+  align-items: end;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-edit-section > .menu > div:nth-child(5) {
+  grid-area: arrow;
+
+  display: flex;
+  justify-content: end;
+}
+
+.menu-edit-section > .menu > div:nth-child(6) {
+  grid-area: pencilTrash;
+
+  display: flex;
+  justify-content: end;
+}
+
+/* --------------------------------------찜과 장바구니 메뉴카드 */
+.menu-wish-cart-in-section > h1 {
+  display: none;
+}
+
+.menu-wish-cart-in-section > .menu {
+  height: 80px;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    "img name arrow" 1fr
+    "img engName ." 1fr
+    "img price pencilTrash" 1fr/
+    80px 1fr 1fr;
+
+  column-gap: 16px;
+  position: relative;
+}
+
+.menu-wish-cart-in-section > .menu > div:first-child {
+  grid-area: img;
+}
+
+.menu-wish-cart-in-section > .menu > div:first-child > a {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-wish-cart-in-section > .menu > div:first-child > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-wish-cart-in-section > .menu > h1 {
+  grid-area: name;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-wish-cart-in-section > .menu > h2 {
+  grid-area: engName;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: var(--color-text-5);
+}
+
+.menu-wish-cart-in-section > .menu > div:nth-child(4) {
+  grid-area: price;
+
+  display: flex;
+  align-items: end;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-wish-cart-in-section > .menu > div:nth-child(5) {
+  grid-area: arrow;
+
+  display: flex;
+  justify-content: end;
+}
+
+.menu-wish-cart-in-section > .menu > div:nth-child(6) {
+  grid-area: pencilTrash;
+
+  display: flex;
+  justify-content: end;
+}
+
+.menu-wish-cart-in-section .icon-cart::before,
+.menu-wish-cart-in-section .icon-plus::before {
+  background-color: var(--color-text-6);
+}
+
+/* --------------------------------------장바구니에 담겨진 메뉴카드 */
+.menu-cart-in-section > h1 {
+  display: none;
+}
+
+.menu-cart-in-section > .menu {
+  height: 137px;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    "checkCancel checkCancel checkCancel" 30px
+    "img name wish" 1fr
+    "img engName ." 1fr
+    "img price ." 1fr
+    "addTempPrice addTempPrice addTempPrice" 30px/
+    80px 1fr 1fr;
+
+  column-gap: 16px;
+  position: relative;
+}
+
+.menu-cart-in-section > .menu > div:first-child {
+  grid-area: img;
+}
+
+.menu-cart-in-section > .menu > div:first-child > a {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-cart-in-section > .menu > div:first-child > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-cart-in-section > .menu > h1 {
+  grid-area: name;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-cart-in-section > .menu > h2 {
+  grid-area: engName;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: var(--color-text-5);
+}
+
+.menu-cart-in-section > .menu > div:nth-child(4) {
+  grid-area: price;
+
+  display: flex;
+  align-items: end;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-cart-in-section > .menu > div:nth-child(5) {
+  grid-area: wish;
+
+  display: flex;
+  justify-content: end;
+}
+
+.menu-cart-in-section > .menu > div:nth-child(6) {
+  grid-area: checkCancel;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-cart-in-section > .menu > div:nth-child(7) {
+  grid-area: addTempPrice;
+
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-cart-in-section > .menu > div:nth-child(7) > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-cart-in-section > .menu > div:nth-child(7) > div:nth-child(2) {
+  font-size: 14px;
+  color: #5c5c5c;
+}
+
+.menu-cart-in-section > .menu > div:nth-child(7) > div:nth-child(3) {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menu-cart-in-section > .menu .icon-plus-circle::before,
+.menu-cart-in-section > .menu .icon-minus-circle::before {
+  mask-size: 20px;
+  -webkit-mask-size: 20px;
+}
+
+.menu-cart-in-section > .menu .icon-close::before {
+  background-color: #c5c7c2;
+}
+
+/* --------------------------------------주문완료된 메뉴카드 */
+.menu-order-completed-section > h1 {
+  display: none;
+}
+
+.menu-order-completed-section > .menu {
+  height: 80px;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    "img name button" 1fr
+    "img date button" 1fr
+    "img price button" 1fr/
+    80px 1fr 1fr;
+
+  column-gap: 16px;
+}
+
+.menu-order-completed-section > .menu > div:first-child {
+  grid-area: img;
+
+  position: relative;
+}
+
+.menu-order-completed-section > .menu > div:first-child > a {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-order-completed-section > .menu > div:first-child > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.menu-order-completed-section > .menu > div:first-child::after {
+  position: absolute;
+  content: "주문완료";
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  word-break: keep-all;
+  font-size: var(--font-size-normal-mobile);
+}
+
+.menu-order-completed-section > .menu > h1 {
+  grid-area: name;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-order-completed-section > .menu > div:nth-child(3) {
+  grid-area: date;
+
+  font-size: var(--font-size-normal2-mobile);
+  color: var(--color-text-5);
+}
+
+.menu-order-completed-section > .menu > div:nth-child(4) {
+  grid-area: price;
+
+  display: flex;
+  align-items: end;
+
+  font-size: var(--font-size-normal-mobile);
+  font-weight: 600;
+}
+
+.menu-order-completed-section > .menu > div:nth-child(5) {
+  grid-area: button;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.menu-order-completed-section > .menu > div:nth-child(5) > a {
+  width: 100px;
+}
+
+@media (min-width: 768px) {
+  /* --------------------------------------기본 메뉴카드 */
+  .menu-section > .menu {
+    width: 225px;
+    height: 280px;
+
+    display: grid;
+    grid-template:
+      "img img img" 186px
+      "name . ." 1fr
+      "engName . ." 1fr
+      "price . ." 1fr/
+      1fr 1fr 1fr;
+    column-gap: 0;
+  }
+
+  /* --------------------------------------주문확인서 메뉴카드 */
+  .menu-ordered-section > .menu {
+    width: 225px;
+    height: 280px;
+
+    display: grid;
+    grid-template:
+      "img img img" 186px
+      "name . ." 1fr
+      "engName . ." 1fr
+      "price price ." 1fr/
+      1fr 1fr 1fr;
+    column-gap: 0;
+  }
+  /* --------------------------------------찜기능이 있는 메뉴카드 */
+  .menu-wish-section > .menu {
+    width: 225px;
+    height: 280px;
+
+    display: grid;
+    grid-template:
+      "img img img" 186px
+      "name . ." 1fr
+      "engName . ." 1fr
+      "price . wish" 1fr/
+      1fr 1fr 1fr;
+    column-gap: 0;
+  }
+
+  .menu-wish-section > .menu > div:nth-child(5) {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 10px;
+  }
+
+  /* --------------------------------------삭제만 가능한 메뉴카드 */
+  .menu-check-section > .menu {
+    width: 225px;
+    height: 280px;
+
+    display: grid;
+    grid-template:
+      "img img img" 186px
+      "name . ." 1fr
+      "engName . ." 1fr
+      "price . check" 1fr/
+      1fr 1fr 1fr;
+    column-gap: 0;
+  }
+
+  .menu-check-section > .menu > div:nth-child(5) {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 10px;
+  }
+  /* --------------------------------------삭제만 가능한 메뉴카드 */
+  .menu-delete-section > .menu {
+    width: 225px;
+    height: 280px;
+
+    display: grid;
+    grid-template:
+      "img img img" 186px
+      "name . ." 1fr
+      "engName . ." 1fr
+      "price . trash" 1fr/
+      1fr 1fr 1fr;
+    column-gap: 0;
+  }
+
+  .menu-delete-section > .menu > div:nth-child(5) {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+  }
+  /* --------------------------------------편집 가능한 메뉴카드 */
+  .menu-edit-section > .menu {
+    width: 225px;
+    height: 280px;
+
+    display: grid;
+    grid-template:
+      "img img img" 186px
+      "name . arrow" 1fr
+      "engName . ." 1fr
+      "price . ." 1fr/
+      1fr 1fr 1fr;
+    column-gap: 0;
+
+    position: relative;
+  }
+
+  .menu-edit-section > .menu > div:nth-child(6) {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 10px;
+
+    position: absolute;
+    top: 110px;
+    right: 8px;
+  }
+
+  /* --------------------------------------찜과 장바구니 메뉴카드 */
+  .menu-wish-cart-in-section > .menu {
+    width: 225px;
+    height: 280px;
+
+    display: grid;
+    grid-template:
+      "img img img" 186px
+      "name . arrow" 1fr
+      "engName . ." 1fr
+      "price . ." 1fr/
+      1fr 1fr 1fr;
+    column-gap: 0;
+
+    position: relative;
+  }
+
+  .menu-wish-cart-in-section > .menu > div:nth-child(6) {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 10px;
+
+    position: absolute;
+    top: 110px;
+    right: 8px;
+  }
+
+  .menu-wish-cart-in-section .icon-cart::before,
+  .menu-wish-cart-in-section .icon-plus::before {
+    background-color: var(--color-text-invert);
+  }
+
+  /* --------------------------------------장바구니에 담겨진 메뉴카드 */
+
+  .menu-cart-in-section > h1 {
+    display: none;
+  }
+
+  .menu-cart-in-section > .menu {
+    height: 360px;
+    width: 225px;
+
+    display: grid;
+    grid-template:
+      "checkCancel checkCancel checkCancel" 30px
+      "img img img" 1fr
+      "name . wish" 1fr
+      "engName . ." 1fr
+      "price . ." 1fr
+      "addTempPrice addTempPrice addTempPrice" 30px/
+      80px 1fr 1fr;
+
+    column-gap: 16px;
+    position: relative;
+  }
+
+  .menu-cart-in-section > .menu > div:nth-child(6) {
+    grid-area: checkCancel;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-cart-in-section > .menu > div:nth-child(7) {
+    grid-area: addTempPrice;
+
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* --------------------------------------주문완료된 메뉴카드 */
+
+  .menu-order-completed-section > .menu {
+    height: 310px;
+    width: 225px;
+
+    display: grid;
+    grid-template:
+      "img img img" 1fr
+      "name name name" 1fr
+      "date date date" 1fr
+      "price . button" 1fr/
+      80px 1fr 1fr;
+
+    column-gap: 16px;
+  }
+
+  .menu-order-completed-section > .menu > div:first-child::after {
+    position: absolute;
+    content: "주문완료";
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    word-break: keep-all;
+    font-size: var(--font-size-title2-mobile);
+  }
+
+  .menu-order-completed-section > .menu > h1 {
+    grid-area: name;
+
+    display: flex;
+    align-items: center;
+
+    font-size: var(--font-size-normal-mobile);
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .menu-order-completed-section > .menu > div:nth-child(3) {
+    grid-area: date;
+
+    font-size: var(--font-size-normal2-mobile);
+    color: var(--color-text-5);
+  }
+
+  .menu-order-completed-section > .menu > div:nth-child(4) {
+    grid-area: price;
+
+    display: flex;
+    align-items: end;
+
+    font-size: var(--font-size-normal-mobile);
+    font-weight: 600;
+  }
+
+  .menu-order-completed-section > .menu > div:nth-child(5) {
+    grid-area: button;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: auto;
+  }
+
+  .menu-order-completed-section > .menu > div:nth-child(5) > a {
+    width: 100px;
+  }
+}
