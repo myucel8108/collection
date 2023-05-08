@@ -1,5 +1,19 @@
 <script setup>
-import UserDetails from '../store/UserDetails.js'
+//import UserDetails from '../store/UserDetails.js'
+import {useUserDetailsStore} from '../store/useUserDetailsStore.js';
+import {useRouter} from 'vue-router';
+let userDetails = useUserDetailsStore();
+let router = useRouter();
+function logout(){
+    
+    console.log("로그아웃!")
+    //이건 action사용하지 않았을때
+    // userDetails.username=null;
+    // userDetails.email=null;
+    // userDetails.id=0;
+    userDetails.logout();
+    router.push("/index");
+}
 </script>
 
 <template>
@@ -19,8 +33,11 @@ import UserDetails from '../store/UserDetails.js'
                     <router-link to="/index" class="icon icon-home" title="index페이지로 이동합니다.">홈</router-link>
                 </li>
                 <li>
-                    <router-link v-if="UserDetails.email ===''" to="/login" class="icon icon-sign-on" title="로그인">로그인</router-link>
-                    <router-link v-if="UserDetails.email!==''" to="/logout" class="icon icon-sign-out" title="로그아웃">로그아웃</router-link>
+                    <router-link v-if="!userDetails.isAuthenticated" to="/admin/menu/list" class="icon icon-setting" title="메뉴관리로 이동합니다">메뉴목록</router-link>
+                </li>
+                <li>
+                    <router-link v-if="!userDetails.isAuthenticated" to="/login" class="icon icon-sign-on" title="로그인">로그인</router-link>
+                    <router-link v-if="userDetails.isAuthenticated" to="/logout" class="icon icon-sign-out" title="로그아웃" @click="logout">로그아웃</router-link>
                 </li>
             </ul>
         </nav>

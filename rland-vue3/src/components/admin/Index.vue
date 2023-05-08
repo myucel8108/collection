@@ -9,7 +9,7 @@
         </div>
     </Header>
     <main>
-        안녕하세요~ 
+        안녕하세요~  관리자에요~
     </main>
     <footer>인덱스 푸터</footer>
 </template>

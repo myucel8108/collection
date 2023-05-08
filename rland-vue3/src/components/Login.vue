@@ -1,6 +1,9 @@
 <script setup>
 import {reactive} from 'vue';
-import userDetails from './store/UserDetails.js';
+import {useRouter} from 'vue-router';
+import {useUserDetailsStore} from './store/useUserDetailsStore.js';
+let userDetails = useUserDetailsStore(); //피니아를 사용하는 방법
+let router = useRouter();
 
 let user= reactive({
     username: "",
@@ -20,12 +23,12 @@ async function loginHandler(){
     });
     let json = await response.json();
 
-
-    userDetails.username= json.result.username;
-    userDetails.password= json.result.password;
+    //새롭게 데이터를 받아보자
+    userDetails.username= json.result.userName;
+    //userDetails.password= json.result.pwd;
     userDetails.email= json.result.email;
     console.log(userDetails.email);
-
+    router.push("/index");
 }
 </script>
 
