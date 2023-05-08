@@ -1,22 +1,54 @@
+<script setup>
+import {reactive} from 'vue';
+import userDetails from './store/UserDetails.js';
+
+let user= reactive({
+    username: "",
+    password:"",
+    role:""
+})
+
+async function loginHandler(){
+
+    let response= await fetch("http://localhost:8080/members/login",{
+        method:"POST",
+        headers:{
+            "Accept":"application/json",
+            "Content-type":"application/x-www-form-urlencoded"
+        },
+        body:`username=${user.username}&password=${user.password}`
+    });
+    let json = await response.json();
+
+
+    userDetails.username= json.result.username;
+    userDetails.password= json.result.password;
+    userDetails.email= json.result.email;
+    console.log(userDetails.email);
+
+}
+</script>
+
+
 <template>
     <main>
         <div class="sign-in">
             <div class="sign-in-logo">
                 <img src="/image/logo-black.svg" alt="Rland" />
             </div>
-            <form class="sign-in-form">
+            <form class="sign-in-form"  enctype="application/x-www-form-urlencoded">
                 <div class="sign-in-form-input">
                     <div>
-                        <input type="text" class="input-bottom-line" placeholder="아이디" required />
+                        <input type="text" class="input-bottom-line" placeholder="아이디" required  v-model="user.username"/>
                     </div>
                     <div>
-                        <input type="password" class="input-bottom-line" placeholder="비밀번호" required />
+                        <input type="password" class="input-bottom-line" placeholder="비밀번호" required v-model="user.password" />
                     </div>
                 </div>
 
                 <div class="sign-in-form-button">
                     <div class="wd-100">
-                        <input type="submit" value="로그인" class="btn btn-default" />
+                        <input type="submit" value="로그인" class="btn btn-default" @click.prevent = "loginHandler" />
                     </div>
                     <div class="font-14">또는</div>
                     <div class="wd-100">

@@ -1,3 +1,6 @@
+<script setup>
+import UserDetails from './store/UserDetails';
+</script>
 <template>
     <!-- 메인 -->
     <main>
@@ -9,7 +12,8 @@
                     <h1>알랜드에 오신 것을 환영합니다.</h1>
                     <h2>부안에 오면 꼭 들리는 카페</h2>
                     <div>
-                        <a href="/menu/list.html" class="btn btn-default">주문하기</a>
+                        <router-link to="/menu/list" class="btn btn-default">주문하기</router-link>
+                        <span>{{UserDetails.email}}</span>
                     </div>
                 </div>
                 <!-- 2 -->
